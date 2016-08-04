@@ -24,6 +24,8 @@ object PhaserExample extends App {
   usrThread.start
   privateThread.start
   optThread.start
+
+  phaser
 }
 
 class FileSearch(val initialPath: String, ext: String, phaser: Phaser) extends Runnable {
