@@ -5,4 +5,12 @@ package com.mayo
  */
 package object java_concurrency {
   def currentThreadName = Thread.currentThread.getName
+  def tryThreadCatchPrint(f:  => Unit) = {
+    try {
+      f
+    }
+    catch {
+      case e: InterruptedException => e.printStackTrace()
+    }
+  }
 }
